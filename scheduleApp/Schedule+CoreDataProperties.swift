@@ -17,9 +17,10 @@ extension Schedule {
     }
     
     // 非null対策
-    @NSManaged public var title: String { title ?? "" }
-    @NSManaged public var createdAt: Date { createdAt ?? Date() }
-    @NSManaged public var scheduledAt: Date { scheduledAt ?? Date() }
+    @NSManaged public var title: String
+    @NSManaged public var content: String
+    @NSManaged public var createdAt: Date
+    @NSManaged public var scheduledAt: Date
 
 }
 
