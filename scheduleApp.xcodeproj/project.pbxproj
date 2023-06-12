@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE272CD72A36AE2A0070764C /* Schedule+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE272CD52A36AE2A0070764C /* Schedule+CoreDataClass.swift */; };
+		CE272CD82A36AE2A0070764C /* Schedule+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE272CD62A36AE2A0070764C /* Schedule+CoreDataProperties.swift */; };
 		CE99DD6B2A36A11C0095780E /* scheduleAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE99DD6A2A36A11C0095780E /* scheduleAppApp.swift */; };
 		CE99DD6D2A36A11C0095780E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE99DD6C2A36A11C0095780E /* ContentView.swift */; };
 		CE99DD6F2A36A11D0095780E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE99DD6E2A36A11D0095780E /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE272CD52A36AE2A0070764C /* Schedule+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Schedule+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CE272CD62A36AE2A0070764C /* Schedule+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Schedule+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CE99DD672A36A11C0095780E /* scheduleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scheduleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE99DD6A2A36A11C0095780E /* scheduleAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scheduleAppApp.swift; sourceTree = "<group>"; };
 		CE99DD6C2A36A11C0095780E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 		CE99DD692A36A11C0095780E /* scheduleApp */ = {
 			isa = PBXGroup;
 			children = (
+				CE272CD62A36AE2A0070764C /* Schedule+CoreDataProperties.swift */,
+				CE272CD52A36AE2A0070764C /* Schedule+CoreDataClass.swift */,
 				CE99DD6A2A36A11C0095780E /* scheduleAppApp.swift */,
 				CE99DD6C2A36A11C0095780E /* ContentView.swift */,
 				CE99DD6E2A36A11D0095780E /* Assets.xcassets */,
@@ -263,10 +269,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE272CD82A36AE2A0070764C /* Schedule+CoreDataProperties.swift in Sources */,
 				CE99DD742A36A11D0095780E /* Persistence.swift in Sources */,
 				CE99DD6D2A36A11C0095780E /* ContentView.swift in Sources */,
 				CE99DD772A36A11D0095780E /* scheduleApp.xcdatamodeld in Sources */,
 				CE99DD6B2A36A11C0095780E /* scheduleAppApp.swift in Sources */,
+				CE272CD72A36AE2A0070764C /* Schedule+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
