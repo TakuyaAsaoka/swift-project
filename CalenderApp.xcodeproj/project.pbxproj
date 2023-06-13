@@ -12,10 +12,14 @@
 		C97AEB112A38355B00BB3408 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C97AEB102A38355B00BB3408 /* Assets.xcassets */; };
 		C97AEB142A38355B00BB3408 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C97AEB132A38355B00BB3408 /* Preview Assets.xcassets */; };
 		C97AEB162A38355B00BB3408 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97AEB152A38355B00BB3408 /* Persistence.swift */; };
-		C97AEB192A38355B00BB3408 /* CalenderApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C97AEB172A38355B00BB3408 /* CalenderApp.xcdatamodeld */; };
 		C97AEB232A38355B00BB3408 /* CalenderAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97AEB222A38355B00BB3408 /* CalenderAppTests.swift */; };
 		C97AEB2D2A38355B00BB3408 /* CalenderAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97AEB2C2A38355B00BB3408 /* CalenderAppUITests.swift */; };
 		C97AEB2F2A38355B00BB3408 /* CalenderAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97AEB2E2A38355B00BB3408 /* CalenderAppUITestsLaunchTests.swift */; };
+		C97AEB3D2A3839FE00BB3408 /* Schedule+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97AEB3B2A3839FE00BB3408 /* Schedule+CoreDataClass.swift */; };
+		C97AEB3E2A3839FE00BB3408 /* Schedule+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97AEB3C2A3839FE00BB3408 /* Schedule+CoreDataProperties.swift */; };
+		C97AEB422A3862F000BB3408 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97AEB412A3862F000BB3408 /* CellView.swift */; };
+		C97AEB442A38C1AC00BB3408 /* EditScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97AEB432A38C1AC00BB3408 /* EditScheduleView.swift */; };
+		C97AEB462A38C44F00BB3408 /* AddScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97AEB452A38C44F00BB3408 /* AddScheduleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,12 +46,16 @@
 		C97AEB102A38355B00BB3408 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C97AEB132A38355B00BB3408 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C97AEB152A38355B00BB3408 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		C97AEB182A38355B00BB3408 /* CalenderApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CalenderApp.xcdatamodel; sourceTree = "<group>"; };
 		C97AEB1E2A38355B00BB3408 /* CalenderAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalenderAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97AEB222A38355B00BB3408 /* CalenderAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderAppTests.swift; sourceTree = "<group>"; };
 		C97AEB282A38355B00BB3408 /* CalenderAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalenderAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97AEB2C2A38355B00BB3408 /* CalenderAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderAppUITests.swift; sourceTree = "<group>"; };
 		C97AEB2E2A38355B00BB3408 /* CalenderAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C97AEB3B2A3839FE00BB3408 /* Schedule+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Schedule+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C97AEB3C2A3839FE00BB3408 /* Schedule+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Schedule+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C97AEB412A3862F000BB3408 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		C97AEB432A38C1AC00BB3408 /* EditScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScheduleView.swift; sourceTree = "<group>"; };
+		C97AEB452A38C44F00BB3408 /* AddScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScheduleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,12 +106,16 @@
 		C97AEB0B2A38355A00BB3408 /* CalenderApp */ = {
 			isa = PBXGroup;
 			children = (
+				C97AEB3B2A3839FE00BB3408 /* Schedule+CoreDataClass.swift */,
+				C97AEB3C2A3839FE00BB3408 /* Schedule+CoreDataProperties.swift */,
 				C97AEB0C2A38355A00BB3408 /* CalenderAppApp.swift */,
 				C97AEB0E2A38355A00BB3408 /* ContentView.swift */,
 				C97AEB102A38355B00BB3408 /* Assets.xcassets */,
 				C97AEB152A38355B00BB3408 /* Persistence.swift */,
-				C97AEB172A38355B00BB3408 /* CalenderApp.xcdatamodeld */,
 				C97AEB122A38355B00BB3408 /* Preview Content */,
+				C97AEB412A3862F000BB3408 /* CellView.swift */,
+				C97AEB452A38C44F00BB3408 /* AddScheduleView.swift */,
+				C97AEB432A38C1AC00BB3408 /* EditScheduleView.swift */,
 			);
 			path = CalenderApp;
 			sourceTree = "<group>";
@@ -263,10 +275,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C97AEB3E2A3839FE00BB3408 /* Schedule+CoreDataProperties.swift in Sources */,
+				C97AEB462A38C44F00BB3408 /* AddScheduleView.swift in Sources */,
 				C97AEB162A38355B00BB3408 /* Persistence.swift in Sources */,
+				C97AEB422A3862F000BB3408 /* CellView.swift in Sources */,
+				C97AEB442A38C1AC00BB3408 /* EditScheduleView.swift in Sources */,
 				C97AEB0F2A38355A00BB3408 /* ContentView.swift in Sources */,
 				C97AEB0D2A38355A00BB3408 /* CalenderAppApp.swift in Sources */,
-				C97AEB192A38355B00BB3408 /* CalenderApp.xcdatamodeld in Sources */,
+				C97AEB3D2A3839FE00BB3408 /* Schedule+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,19 +607,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		C97AEB172A38355B00BB3408 /* CalenderApp.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				C97AEB182A38355B00BB3408 /* CalenderApp.xcdatamodel */,
-			);
-			currentVersion = C97AEB182A38355B00BB3408 /* CalenderApp.xcdatamodel */;
-			path = CalenderApp.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = C97AEB012A38355A00BB3408 /* Project object */;
 }
