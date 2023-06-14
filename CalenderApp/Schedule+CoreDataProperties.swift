@@ -25,6 +25,7 @@ extension Schedule {
 extension Schedule : Identifiable {
   public var stringStart: String { dateFormatter(date: start) }
   public var stringEnd: String { dateFormatter(date: end) }
+  public var stringStartDay: String { String(stringStart.split(separator: "/")[2]) }
   
   func dateFormatter(date: Date) -> String {
       let dateFormatter = DateFormatter()

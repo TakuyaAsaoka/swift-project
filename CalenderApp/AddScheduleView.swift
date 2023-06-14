@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
-import CoreData
 
 struct AddScheduleView: View {
+  @Environment(\.managedObjectContext) private var viewContext
+
   @State private var title: String = ""
   @State private var selectionStartDate: Date = Date()
   @State private var selectionEndDate: Date = Date()
@@ -22,9 +23,21 @@ struct AddScheduleView: View {
         .background(Color(red:0.8, green:1, blue:1, opacity: 0.6))
       DatePicker("開始日時を選択", selection: $selectionStartDate)
       DatePicker("終了日時を選択", selection: $selectionEndDate)
+      Button(action: {addSchedule()}) {
+        Text("保存")
+      }
       Spacer()
     }
     .padding()
+  }
+
+  private func addSchedule() {
+    let schedule = Schedule(context: viewContext)
+    schedule.title = title
+    schedule.start = selectionStartDate
+    schedule.end = selectionEndDate
+
+    try? viewContext.save()
   }
 }
 

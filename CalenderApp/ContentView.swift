@@ -12,10 +12,13 @@ struct ContentView: View {
   @Environment(\.managedObjectContext) private var viewContext
 
   @FetchRequest(
+    entity: Schedule.entity(),
     sortDescriptors: [NSSortDescriptor(keyPath: \Schedule.start, ascending: true)],
     animation: .default)
-  private var schedules: FetchedResults<Schedule>
-  
+  private var fetchedScheduleList: FetchedResults<Schedule>
+
+  @State private var arrayScheduleText: [[String]] = Array(repeating:[], count: 40)
+
   let dayOfWeek = ["日","月","火","水","木","金","土"]
 
   var body: some View {
@@ -36,7 +39,7 @@ struct ContentView: View {
           HStack(spacing: 0) {
             ForEach(1..<8, id: \.self) { num2 in
               let day: Int = (7 * (num1 - 1) + num2)
-              NavigationLink(destination: CellView(day:day)) {
+              NavigationLink(destination: CellView(day:day, schedules: arrayScheduleText[day - 1])) {
                 Rectangle()
                   .stroke(Color(red: 0.3, green: 0.3, blue: 0.3, opacity: 1), lineWidth: 1)
                   .frame(height: 100)
@@ -51,7 +54,14 @@ struct ContentView: View {
                           .padding(.leading, 6)
                         Spacer()
                       }
-                      // ここにコンテンツが入ってくる
+                      // ここにスケジュールアイコンビューが入ってくる
+                      VStack(spacing: 2) {
+                        ForEach(fetchedScheduleList) { schedule in
+                          if Int(schedule.stringStartDay)! == day {
+                            ScheduleIcon(text: schedule.title)
+                          }
+                        }
+                      }
                       Spacer()
                     }
                   )
@@ -59,6 +69,13 @@ struct ContentView: View {
             }
           }
         }
+        Button("デバッグ", action: {
+          //          for i in 0..<fetchedScheduleList.count {
+          //            print(fetchedScheduleList[i])
+          //          }
+          //          createArrayScheduleText()
+          //print(arrayScheduleText[13])
+        })
         Spacer()
       }
       .padding(.top, 30)
@@ -76,6 +93,11 @@ struct ContentView: View {
             Image(systemName: "chevron.forward")
           }
         }
+      }
+    }.onChange(of: Array(fetchedScheduleList)) { newFetchedScheduleList in
+      for i in 0..<newFetchedScheduleList.count {
+        let startDay = Int(newFetchedScheduleList[i].stringStartDay)!
+        arrayScheduleText[startDay - 1].insert(newFetchedScheduleList[i].title, at:arrayScheduleText[startDay - 1].count)
       }
     }
   }

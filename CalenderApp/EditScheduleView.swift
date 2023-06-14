@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import CoreData
 
 struct EditScheduleView: View {
   @State private var title: String = ""

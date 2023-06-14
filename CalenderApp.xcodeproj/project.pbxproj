@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C961C5742A3950BF00BFAA87 /* ScheduleIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C961C5732A3950BF00BFAA87 /* ScheduleIcon.swift */; };
 		C97AEB0D2A38355A00BB3408 /* CalenderAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97AEB0C2A38355A00BB3408 /* CalenderAppApp.swift */; };
 		C97AEB0F2A38355A00BB3408 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97AEB0E2A38355A00BB3408 /* ContentView.swift */; };
 		C97AEB112A38355B00BB3408 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C97AEB102A38355B00BB3408 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C961C5732A3950BF00BFAA87 /* ScheduleIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleIcon.swift; sourceTree = "<group>"; };
 		C97AEB092A38355A00BB3408 /* CalenderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalenderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97AEB0C2A38355A00BB3408 /* CalenderAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderAppApp.swift; sourceTree = "<group>"; };
 		C97AEB0E2A38355A00BB3408 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				C97AEB152A38355B00BB3408 /* Persistence.swift */,
 				C97AEB122A38355B00BB3408 /* Preview Content */,
 				C97AEB412A3862F000BB3408 /* CellView.swift */,
+				C961C5732A3950BF00BFAA87 /* ScheduleIcon.swift */,
 				C97AEB452A38C44F00BB3408 /* AddScheduleView.swift */,
 				C97AEB432A38C1AC00BB3408 /* EditScheduleView.swift */,
 			);
@@ -275,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C961C5742A3950BF00BFAA87 /* ScheduleIcon.swift in Sources */,
 				C97AEB3E2A3839FE00BB3408 /* Schedule+CoreDataProperties.swift in Sources */,
 				C97AEB462A38C44F00BB3408 /* AddScheduleView.swift in Sources */,
 				C97AEB162A38355B00BB3408 /* Persistence.swift in Sources */,
