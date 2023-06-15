@@ -16,6 +16,12 @@
 		C92C2BB52A3A7FD500742006 /* ScheduleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C2BB42A3A7FD500742006 /* ScheduleAppTests.swift */; };
 		C92C2BBF2A3A7FD500742006 /* ScheduleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C2BBE2A3A7FD500742006 /* ScheduleAppUITests.swift */; };
 		C92C2BC12A3A7FD500742006 /* ScheduleAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C2BC02A3A7FD500742006 /* ScheduleAppUITestsLaunchTests.swift */; };
+		C92C2BCF2A3A807F00742006 /* Schedule+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C2BCD2A3A807F00742006 /* Schedule+CoreDataClass.swift */; };
+		C92C2BD02A3A807F00742006 /* Schedule+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C2BCE2A3A807F00742006 /* Schedule+CoreDataProperties.swift */; };
+		C92C2BD22A3A832900742006 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C2BD12A3A832900742006 /* CellView.swift */; };
+		C92C2BD42A3A841700742006 /* ScheduleIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C2BD32A3A841700742006 /* ScheduleIcon.swift */; };
+		C92C2BD62A3A84E300742006 /* EditScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C2BD52A3A84E300742006 /* EditScheduleView.swift */; };
+		C92C2BD82A3A853F00742006 /* AddScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C2BD72A3A853F00742006 /* AddScheduleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +54,12 @@
 		C92C2BBA2A3A7FD500742006 /* ScheduleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScheduleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92C2BBE2A3A7FD500742006 /* ScheduleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAppUITests.swift; sourceTree = "<group>"; };
 		C92C2BC02A3A7FD500742006 /* ScheduleAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C92C2BCD2A3A807F00742006 /* Schedule+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Schedule+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C92C2BCE2A3A807F00742006 /* Schedule+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Schedule+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C92C2BD12A3A832900742006 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		C92C2BD32A3A841700742006 /* ScheduleIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleIcon.swift; sourceTree = "<group>"; };
+		C92C2BD52A3A84E300742006 /* EditScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScheduleView.swift; sourceTree = "<group>"; };
+		C92C2BD72A3A853F00742006 /* AddScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScheduleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +110,14 @@
 		C92C2B9D2A3A7FD300742006 /* ScheduleApp */ = {
 			isa = PBXGroup;
 			children = (
+				C92C2BCD2A3A807F00742006 /* Schedule+CoreDataClass.swift */,
+				C92C2BD52A3A84E300742006 /* EditScheduleView.swift */,
+				C92C2BCE2A3A807F00742006 /* Schedule+CoreDataProperties.swift */,
+				C92C2BD32A3A841700742006 /* ScheduleIcon.swift */,
 				C92C2B9E2A3A7FD300742006 /* ScheduleAppApp.swift */,
+				C92C2BD72A3A853F00742006 /* AddScheduleView.swift */,
 				C92C2BA02A3A7FD300742006 /* ContentView.swift */,
+				C92C2BD12A3A832900742006 /* CellView.swift */,
 				C92C2BA22A3A7FD500742006 /* Assets.xcassets */,
 				C92C2BA72A3A7FD500742006 /* Persistence.swift */,
 				C92C2BA92A3A7FD500742006 /* ScheduleApp.xcdatamodeld */,
@@ -263,10 +281,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C92C2BD02A3A807F00742006 /* Schedule+CoreDataProperties.swift in Sources */,
 				C92C2BA82A3A7FD500742006 /* Persistence.swift in Sources */,
 				C92C2BA12A3A7FD300742006 /* ContentView.swift in Sources */,
+				C92C2BD82A3A853F00742006 /* AddScheduleView.swift in Sources */,
+				C92C2BD62A3A84E300742006 /* EditScheduleView.swift in Sources */,
+				C92C2BD42A3A841700742006 /* ScheduleIcon.swift in Sources */,
 				C92C2BAB2A3A7FD500742006 /* ScheduleApp.xcdatamodeld in Sources */,
 				C92C2B9F2A3A7FD300742006 /* ScheduleAppApp.swift in Sources */,
+				C92C2BCF2A3A807F00742006 /* Schedule+CoreDataClass.swift in Sources */,
+				C92C2BD22A3A832900742006 /* CellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
