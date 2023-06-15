@@ -3,6 +3,8 @@
 本アプリは、SwiftUIで開発されたカレンダーアプリです。  
 ユーザーは、予定をカレンダーに記録しておくことで一目でその月の予定を把握できます。
 
+![image](https://github.com/TakuyaAsaoka/swift-project/assets/119467555/b6ebf762-7d87-4574-87c5-6b7529300dde)
+
 # Setup
 
 本アプリをローカル環境で動作するには次のステップが必要です。
