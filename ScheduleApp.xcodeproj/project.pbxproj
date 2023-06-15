@@ -22,6 +22,8 @@
 		C92C2BD42A3A841700742006 /* ScheduleIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C2BD32A3A841700742006 /* ScheduleIcon.swift */; };
 		C92C2BD62A3A84E300742006 /* EditScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C2BD52A3A84E300742006 /* EditScheduleView.swift */; };
 		C92C2BD82A3A853F00742006 /* AddScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C2BD72A3A853F00742006 /* AddScheduleView.swift */; };
+		C92C2BDA2A3B3CA100742006 /* MonthIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C2BD92A3B3CA100742006 /* MonthIcon.swift */; };
+		C92C2BDC2A3B409100742006 /* BackColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C2BDB2A3B409100742006 /* BackColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		C92C2BD32A3A841700742006 /* ScheduleIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleIcon.swift; sourceTree = "<group>"; };
 		C92C2BD52A3A84E300742006 /* EditScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScheduleView.swift; sourceTree = "<group>"; };
 		C92C2BD72A3A853F00742006 /* AddScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScheduleView.swift; sourceTree = "<group>"; };
+		C92C2BD92A3B3CA100742006 /* MonthIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthIcon.swift; sourceTree = "<group>"; };
+		C92C2BDB2A3B409100742006 /* BackColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,10 +122,12 @@
 				C92C2BD72A3A853F00742006 /* AddScheduleView.swift */,
 				C92C2BA02A3A7FD300742006 /* ContentView.swift */,
 				C92C2BD12A3A832900742006 /* CellView.swift */,
+				C92C2BD92A3B3CA100742006 /* MonthIcon.swift */,
 				C92C2BA22A3A7FD500742006 /* Assets.xcassets */,
 				C92C2BA72A3A7FD500742006 /* Persistence.swift */,
 				C92C2BA92A3A7FD500742006 /* ScheduleApp.xcdatamodeld */,
 				C92C2BA42A3A7FD500742006 /* Preview Content */,
+				C92C2BDB2A3B409100742006 /* BackColor.swift */,
 			);
 			path = ScheduleApp;
 			sourceTree = "<group>";
@@ -291,6 +297,8 @@
 				C92C2B9F2A3A7FD300742006 /* ScheduleAppApp.swift in Sources */,
 				C92C2BCF2A3A807F00742006 /* Schedule+CoreDataClass.swift in Sources */,
 				C92C2BD22A3A832900742006 /* CellView.swift in Sources */,
+				C92C2BDC2A3B409100742006 /* BackColor.swift in Sources */,
+				C92C2BDA2A3B3CA100742006 /* MonthIcon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

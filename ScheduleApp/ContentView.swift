@@ -18,46 +18,84 @@ struct ContentView: View {
   private var fetchedScheduleList: FetchedResults<Schedule>
 
   @State private var arrayScheduleText: [[String]] = Array(repeating:[], count: 31)
+  @State private var arrayScheduleText2: [String:[String:[[String]]]] = [:]
 
-  private let today = Date()
+  @State private var today = Date()
 
-  private let lastDay = {
-    let calendar = Calendar(identifier: .gregorian)
-    let comps = calendar.dateComponents([.year, .month], from: Date())
-    let firstDay = calendar.date(from: comps)!
+  @State private var lastDay: Int = 0
+  @State private var dayOfWeek: [String] = []
+  @State private var backColor: BackColor = BackColor(month: Calendar.current.component(.month, from: Date()))
+  @State private var arrayScheduleTextOfYear: [String: [[String]]] = [:]
+  @State private var arrayScheduleTextOfMonth: [[String]] = []
+  @State private var arrayScheduleTextOfDay: [String] = []
+
+  init() {
+    _lastDay = State(initialValue: calculateLastDay(date: today))
+    _dayOfWeek = State(initialValue: calculateDayOfWeek(date: today))
+    _backColor = State(initialValue: BackColor(month: calendar.component(.month, from: today)))
+  }
+
+  private let calendar = Calendar(identifier: .gregorian)
+
+  private func calculateMonth(n: Int) {
+    let add = DateComponents(month: n)
+    today = Calendar.current.date(byAdding: add, to: today)!
+  }
+
+  private func calculateLastDay(date: Date) -> Int {
+    let comps = self.calendar.dateComponents([.year, .month], from: date)
+    let firstDay = self.calendar.date(from: comps)!
     let add = DateComponents(month: 1, day: -1)
-    let lastDay = calendar.date(byAdding: add, to: firstDay)!
+    let lastDay = self.calendar.date(byAdding: add, to: firstDay)!
     let lastDayComponents = calendar.dateComponents([.year, .month, .day], from: lastDay)
     return lastDayComponents.day!
-  }()
+  }
 
-  private let firstDay: Date = {
-    let calendar = Calendar(identifier: .gregorian)
-    let comps = calendar.dateComponents([.year, .month], from: Date())
-    return calendar.date(from: comps)!
-  }()
-
-  private let dayOfWeek: [String] = {
-    var array: [String] = []
-    let calendar = Calendar(identifier: .gregorian)
-    let comps = calendar.dateComponents([.year, .month], from: Date())
+  private func calculateDayOfWeek(date: Date) -> [String] {
+    var result: [String] = []
+    let comps = calendar.dateComponents([.year, .month], from: date)
     let firstDay = calendar.date(from: comps)!
     for i in 0..<7 {
       let add = DateComponents(day: i)
       let targetDay = dateOfWeekFormatter.string(from: calendar.date(byAdding: add, to: firstDay)!)
-      array.insert(targetDay, at: i)
+      result.insert(targetDay, at: i)
     }
-    return array
-  }()
+    return result
+  }
+
+  private func createArrayScheduleText1() {
+    var array: [[String]] = Array(repeating:[], count: 31)
+    for i in 0..<fetchedScheduleList.count {
+      let startDay = Int(fetchedScheduleList[i].arrayStart[2])!
+      array[startDay - 1].insert(fetchedScheduleList[i].title, at:array[startDay - 1].count)
+    }
+    arrayScheduleText = array
+  }
+
+  private func createArrayScheduleText2() -> [String:[String:[[String]]]] {
+    var result: [String:[String:[[String]]]] = [:]
+    for i in 0..<fetchedScheduleList.count {
+      let schedule: Schedule = fetchedScheduleList[i]
+      if !result.keys.contains(String(schedule.arrayStart[0])) {
+        result[schedule.arrayStart[0]] = [:]
+      }
+      if !result[String(schedule.arrayStart[0])]!.keys.contains(String(schedule.arrayStart[1])) {
+        result[schedule.arrayStart[0]]![schedule.arrayStart[1]] = Array(repeating:[], count: 31)
+      }
+
+      let startDay = Int(schedule.arrayStart[2])!
+      result[schedule.arrayStart[0]]![schedule.arrayStart[1]]![startDay - 1].insert(schedule.title, at:result[schedule.arrayStart[0]]![schedule.arrayStart[1]]![startDay - 1].count)
+    }
+    print(result)
+    return result
+  }
 
   var body: some View {
     NavigationView {
       ZStack{
-        Color(red: 0.2, green: 0.8, blue: 0.8, opacity: 0.3).ignoresSafeArea()
+        backColor
         VStack(spacing: 0) {
-          Image("6月")
-            .resizable()
-            .frame(width: 300, height: 150)
+          MonthIcon(month: calendar.component(.month, from: today))
           HStack(spacing: 0) {
             ForEach(dayOfWeek, id: \.self) { dayOfWeek in
               Rectangle()
@@ -75,7 +113,7 @@ struct ContentView: View {
               ForEach(0..<7, id: \.self) { num2 in
                 let day: Int = (7 * num1 + (num2 + 1))
                 if day <= lastDay {
-                  NavigationLink(destination: CellView(day:day, schedules: arrayScheduleText[day - 1])) {
+                  NavigationLink(destination: CellView(day: day, schedules: arrayScheduleText[day - 1], backColor: backColor)) {
                     Rectangle()
                       .stroke(Color(red: 0.3, green: 0.3, blue: 0.3, opacity: 1), lineWidth: 1)
                       .frame(height: 100)
@@ -95,10 +133,16 @@ struct ContentView: View {
                           // ここにスケジュールアイコンビューが入ってくる
                           VStack(spacing: 2) {
                             ForEach(fetchedScheduleList) { schedule in
-                              if Int(schedule.stringStartDay)! == day {
+                              if Int(schedule.arrayStart[2])! == day {
                                 ScheduleIcon(text: schedule.title)
                               }
                             }
+                            //ForEach(arrayScheduleTextOfMonth[day - 1]) { title in
+                              //ScheduleIcon(text: title)
+                            //}
+//                            for i in 0..<arrayScheduleTextOfMonth[day - 1].count {
+                              // Text(String(arrayScheduleTextOfMonth[15][0]))
+//                            }
                           }
                           Spacer()
                         }
@@ -112,43 +156,46 @@ struct ContentView: View {
               }
             }
           }
-          Button("デバッグ", action: {
-            //          for i in 0..<fetchedScheduleList.count {
-            //            print(fetchedScheduleList[i])
-            //          }
-            //          createArrayScheduleText()
-            print(dayOfWeek)
-            print(firstDay)
-            print(itemFormatter.dateStyle)
-          })
           Spacer()
         }
-        .padding(.top, -25)
         .padding(.horizontal)
         .navigationTitle("\(YMFormatter.string(from: today))")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
           ToolbarItem(placement: .navigationBarLeading) {
-            Button(action: {}) {
+            Button(action: { calculateMonth(n: -1) }) {
               Image(systemName: "chevron.backward")
             }
           }
           ToolbarItem(placement: .navigationBarTrailing) {
-            Button(action: {}) {
+            Button(action: { calculateMonth(n: 1) }) {
               Image(systemName: "chevron.forward")
             }
           }
         }
-      }.onChange(of: Array(fetchedScheduleList)) { newFetchedScheduleList in
+      }
+      .onAppear {
+        createArrayScheduleText1()
+        arrayScheduleText2 = createArrayScheduleText2()
+        arrayScheduleTextOfYear = arrayScheduleText2[String(calendar.component(.year, from: today))]!
+        print(arrayScheduleTextOfYear)
+        arrayScheduleTextOfMonth = arrayScheduleTextOfYear[String(calendar.component(.month, from: today))]!
+        print(arrayScheduleTextOfMonth)
+      }
+      .onChange(of: Array(fetchedScheduleList)) { newFetchedScheduleList in
         for i in 0..<newFetchedScheduleList.count {
-          let startDay = Int(newFetchedScheduleList[i].stringStartDay)!
+          let startDay = Int(newFetchedScheduleList[i].arrayStart[2])!
           arrayScheduleText[startDay - 1].insert(newFetchedScheduleList[i].title, at:arrayScheduleText[startDay - 1].count)
         }
+      }
+      .onChange(of: today) { newToday in
+        lastDay = calculateLastDay(date: newToday)
+        dayOfWeek = calculateDayOfWeek(date: newToday)
+        backColor = BackColor(month: calendar.component(.month, from: today))
       }
     }
   }
 }
-
 
 private let itemFormatter: DateFormatter = {
   let formatter = DateFormatter()
